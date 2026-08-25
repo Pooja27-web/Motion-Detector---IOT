@@ -1,0 +1,17 @@
+int pirPin = 7;
+void setup() {
+pinMode(pirPin, INPUT);
+Serial.begin(9600);
+Serial.println("PIR warming up...");
+delay(30000);
+Serial.println("PIR Ready");
+}
+void loop() {
+int motion = digitalRead(pirPin);
+if (motion == HIGH) {
+Serial.println("Motion Detected");
+} else {
+Serial.println("No Motion");
+}
+delay(500);
+}
